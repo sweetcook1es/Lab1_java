@@ -30,11 +30,17 @@ public class Main1 {
         System.out.println("Задание 1.6");
         System.out.println("Введите символ a-z или A-Z, чтобы узнать, является ли он большой буквой: ");
         System.out.println("Большая буква - true, не большая буква - false");
-        char character = scanner.next().charAt(0);
-        if (Character.isLetter(character)) {
-            System.out.println("Символ является большой буквой = " + lab.isUpperCase(character));
-        }else{
-            System.out.println("Надо ввести символ a-z или A-Z");
+        char character;
+        boolean validInput = false;
+
+        while (!validInput) {
+            character = scanner.next().charAt(0);
+            if (Character.isLetter(character)) {
+                System.out.println("Символ является большой буквой = " + lab.isUpperCase(character));
+                validInput = true; // Выход из цикла после успешной обработки
+            } else {
+                System.out.println("Надо ввести символ a-z или A-Z. Попробуйте еще раз:");
+            }
         }
 
         //задание 1.8
@@ -78,7 +84,7 @@ public class Main1 {
         //задание 2.6
         System.out.println("Задание 2.6");
         System.out.println("Можно ли получить число из суммы 2х других");
-        System.out.println(" Да - true нет - false");
+        System.out.println("Да - true нет - false");
         System.out.println("Введите первое число (x): ");
         x = scanner.nextInt();
         System.out.println("Введите второе число (y): ");
@@ -94,6 +100,7 @@ public class Main1 {
         System.out.println("Результат: " + lab.age(age));
 
         //задание 2.10
+        scanner.nextLine();
         System.out.println("Задание 2.10");
         System.out.println("Введите день недели, чтоб получить его и все последующие: ");
         String day = scanner.nextLine();
@@ -116,7 +123,7 @@ public class Main1 {
         //задание 3.6
         System.out.println("Задание 3.6");
         System.out.println("Введите число, чтобы узнать, все ли знаки числа одинаковы: ");
-        System.out.println(" true - да false - нет ");
+        System.out.println("true - да false - нет ");
         number = scanner.nextInt();
         System.out.println("Результат: " + lab.equalNum(number));
 
@@ -131,8 +138,8 @@ public class Main1 {
         lab.guessGame();
 
         //задание 4.2
-        System.out.print("Задание 4.2");
-        System.out.print("Введите размер массива: ");
+        System.out.println("Задание 4.2");
+        System.out.println("Введите размер массива: ");
         int size = scanner.nextInt();
         int[] array = new int[size];
         System.out.println("Введите элементы массива:");
@@ -146,8 +153,8 @@ public class Main1 {
         System.out.println("Индекс последнего вхождения: " + searchResult);
 
         //задание 4.4
-        System.out.print("Задание 4.4");
-        System.out.print("Введите размер исходного массива: ");
+        System.out.println("Задание 4.4");
+        System.out.println("Введите размер исходного массива: ");
         size = scanner.nextInt();
         array = new int[size];
         System.out.println("Введите элементы массива:");
@@ -155,9 +162,9 @@ public class Main1 {
             System.out.print("Элемент " + (i + 1) + ": ");
             array[i] = scanner.nextInt();
         }
-        System.out.print("Введите число для добавления (x): ");
+        System.out.println("Введите число для добавления (x): ");
         int numberToAdd = scanner.nextInt();
-        System.out.print("Введите позицию для добавления (pos): ");
+        System.out.println("Введите позицию для добавления (pos): ");
         int position = scanner.nextInt();
         int[] addResult = lab.add(array, numberToAdd, position);
         System.out.print("Результат: [");
@@ -170,8 +177,8 @@ public class Main1 {
         System.out.println("]");
 
         //задание 4.6
-        System.out.print("Задание 4.6");
-        System.out.print("Введите размер массива: ");
+        System.out.println("Задание 4.6");
+        System.out.println("Введите размер массива: ");
         size = scanner.nextInt();
         array = new int[size];
         System.out.println("Введите элементы массива:");
@@ -198,8 +205,8 @@ public class Main1 {
         System.out.println("]");
 
         //задание 4.8
-        System.out.print("Задание 4.8");
-        System.out.print("Введите размер первого массива: ");
+        System.out.println("Задание 4.8");
+        System.out.println("Введите размер первого массива: ");
         int size1 = scanner.nextInt();
         int[] array1 = new int[size1];
         System.out.println("Введите элементы первого массива:");
@@ -226,8 +233,8 @@ public class Main1 {
         System.out.println("]");
 
         //задание 4.10
-        System.out.print("Задание 4.10");
-        System.out.print("Введите размер массива: ");
+        System.out.println("Задание 4.10");
+        System.out.println("Введите размер массива: ");
         size = scanner.nextInt();
         array = new int[size];
         System.out.println("Введите элементы массива:");
